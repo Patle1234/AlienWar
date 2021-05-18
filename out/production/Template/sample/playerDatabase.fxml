@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="" onDragDetected="#addUser" prefHeight="719.0" prefWidth="952.0" style="-fx-background-color: #44C146;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AddPlayer">
+   <children>
+      <TextField fx:id="playerNameEnter" layoutX="133.0" layoutY="143.0" promptText="Enter User Name" visible="false" />
+      <Button fx:id="selectNameBtn" layoutX="154.0" layoutY="181.0" mnemonicParsing="false" onAction="#addUser" text="Select Name" visible="false" />
+      <ListView fx:id="displayPlayers" layoutX="529.0" layoutY="68.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button fx:id="deleteUserBtn" layoutX="543.0" layoutY="274.0" mnemonicParsing="false" onAction="#deleteUser" style="-fx-background-color: #572f61;" text="Delete " textFill="#44c146">
+      </Button>
+      <Button fx:id="addOptionBtn" layoutX="611.0" layoutY="274.0" mnemonicParsing="false" onAction="#allowAddUser" style="-fx-background-color: #572f61;" text="Add" textFill="#44c146" />
+      <Button fx:id="returnButton" layoutX="882.0" layoutY="667.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="32.0" prefWidth="52.0" style="-fx-background-color: #210D26;" text=" ⌫" textFill="#44c146">
+         <font>
+         </font>
+      </Button>
+      <Label fx:id="winLbl" layoutX="564.0" layoutY="348.0" prefHeight="32.0" prefWidth="131.0" text="Wins:" textFill="#572f61">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lossLbl" layoutX="564.0" layoutY="384.0" prefHeight="32.0" prefWidth="131.0" text="Losses:" textFill="#572f61">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   <Label fx:id="rankLbl" layoutX="564.0" layoutY="420.0" prefHeight="32.0" prefWidth="131.0" text="RankScore:" textFill="#572f61">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+      <Accordion />
+      <Button fx:id="statBtn" layoutX="674.0" layoutY="274.0" mnemonicParsing="false" onAction="#showStats" style="-fx-background-color: #572f61;" text="Stats" textFill="#44c146" />
+   </children>
+</AnchorPane>

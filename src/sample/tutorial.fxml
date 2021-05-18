@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Tutorial.Tutorial">
+   <children>
+      <Button fx:id="returnButton" layoutX="934.0" layoutY="748.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="32.0" prefWidth="52.0" text=" ⌫">
+         <font>
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
