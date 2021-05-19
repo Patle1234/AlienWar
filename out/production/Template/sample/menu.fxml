@@ -7,22 +7,22 @@
 
 <AnchorPane prefHeight="719.0" prefWidth="952.0" style="-fx-background-color: #44C146;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Button fx:id="tutorialButton" layoutX="377.0" layoutY="511.0" mnemonicParsing="false"  prefHeight="77.0" prefWidth="282.0" style="-fx-background-color: #44c146;" text="Tutorial" textFill="#572f61">
+      <Button fx:id="tutorialButton" layoutX="335.0" layoutY="458.0" mnemonicParsing="false" onAction="#showTutorial" prefHeight="77.0" prefWidth="282.0" style="-fx-background-color: #44c146;" text="Tutorial" textFill="#572f61">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Button fx:id="playButton" layoutX="370.0" layoutY="206.0" mnemonicParsing="false" onAction="#playGame" prefHeight="77.0" prefWidth="261.0" style="-fx-background-color: #44c146;" text="Play" textFill="#572f61">
+      <Button fx:id="playButton" layoutX="335.0" layoutY="210.0" mnemonicParsing="false" onAction="#playGame" prefHeight="77.0" prefWidth="261.0" style="-fx-background-color: #44c146;" text="Play" textFill="#572f61">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Button fx:id="statButton1" layoutX="393.0" layoutY="349.0" mnemonicParsing="false" onAction="#showPlayers" prefHeight="77.0" prefWidth="249.0" style="-fx-background-color: #44c146;" text="Players" textFill="#572f61">
+      <Button fx:id="statButton1" layoutX="352.0" layoutY="321.0" mnemonicParsing="false" onAction="#showPlayers" prefHeight="77.0" prefWidth="249.0" style="-fx-background-color: #44c146;" text="Players" textFill="#572f61">
          <font>
             <Font size="36.0" />
          </font>
       </Button>
-      <Label layoutX="248.0" layoutY="34.0" prefHeight="123.0" prefWidth="505.0" text="👽Alien Wars👽" textFill="#572f61">
+      <Label layoutX="224.0" layoutY="34.0" prefHeight="123.0" prefWidth="505.0" text="👽Alien Wars👽" textFill="#572f61">
          <font>
             <Font size="72.0" />
          </font></Label>

@@ -76,5 +76,12 @@
          </font>
       </Label>
       <Button fx:id="startGameBtn" layoutX="591.0" layoutY="67.0" mnemonicParsing="false" onAction="#setPlayers" style="-fx-background-color: #572f61;" text="Go!" textFill="#44c146" />
+      <Button layoutX="27.0" layoutY="674.0" mnemonicParsing="false" onAction="#example1" text="1." />
+      <Button layoutX="81.0" layoutY="674.0" mnemonicParsing="false" onAction="#example2" prefHeight="25.0" prefWidth="26.0" text="2." />
+      <Button layoutX="132.0" layoutY="674.0" mnemonicParsing="false" onAction="#example3" text="3." />
+      <Button layoutX="181.0" layoutY="674.0" mnemonicParsing="false" onAction="#example4" text="4." />
+      <Button layoutX="224.0" layoutY="674.0" mnemonicParsing="false" onAction="#example5" text="5." />
+      <Button layoutX="268.0" layoutY="674.0" mnemonicParsing="false" onAction="#example6" text="6." />
+      <Button layoutX="304.0" layoutY="674.0" mnemonicParsing="false" onAction="#example7" text="7." />
    </children>
 </AnchorPane>

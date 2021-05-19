@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="719.0" prefWidth="952.0" style="-fx-background-color: #44C146;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <effect>
+      <Blend />
+   </effect>
+   <children>
+      <Label layoutX="329.0" layoutY="75.0" prefHeight="123.0" prefWidth="265.0" text="Scientist" textFill="#572f61">
+         <font>
+            <Font size="72.0" />
+         </font></Label>
+      <ImageView fitHeight="184.0" fitWidth="200.0" layoutX="47.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/OrangeAlienScientist.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="231.0" layoutY="243.0" prefHeight="58.0" prefWidth="635.0" text="Movement: Can move only two spots on a diagonal, up, down, left, or right." textFill="#572f61" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="323.0" prefHeight="74.0" prefWidth="557.0" text="Super: Can build portals. A portal is used when a piece moves on a start portal. When a piece steps on the start portal, it teleports to the end portal." textFill="#572f61" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="184.0" fitWidth="200.0" layoutX="682.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/YellowAlienScientist.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="returnButton" layoutX="882.0" layoutY="667.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="32.0" prefWidth="52.0" style="-fx-background-color: #572f61;" text=" ⌫" textFill="#44c146">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

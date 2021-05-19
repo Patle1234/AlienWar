@@ -110,43 +110,43 @@ public class Play {
                 pieceImg[i][j].setFitHeight(60);
                 pieceImg[i][j].setFitWidth(60);
                 gPane.add(pieceImg[i][j], j, i);
-                if(i==1){
-                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,true));
-                    gameGrid[i][j]=4;
-                }else if (i == 0 && j == 4) {
-                    yellowPieces.add(pieceGrid[i][j]=new AlienEgg(i, j,true));
-                    gameGrid[i][j]=3;
-                }else if (i == 0 && j == 5) {
-                    yellowPieces.add(pieceGrid[i][j]=new AlienHealer(i, j,true));
-                    gameGrid[i][j]=8;
-                }else if((i==0 &&j==9) || (i==0&&j==0)){
-                    yellowPieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,true));
-                    gameGrid[i][j]=6;
-                } else if((i==0 &&j==3) || (i==0&&j==6)){
-                    yellowPieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,true));
-                    gameGrid[i][j]=5;
-                }else if((i==0 &&j==2) || (i==0&&j==7)){
-                    yellowPieces.add(pieceGrid[i][j]=new AlienScientist(i, j,true));
-                    gameGrid[i][j]=7;
-                }else if(i==8){
-                    orangePieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,false));
-                    gameGrid[i][j]=4;
-                 } else if (i == 9 && j == 4) {
-                    orangePieces.add(pieceGrid[i][j]=new AlienEgg(i, j,false));
-                    gameGrid[i][j]=3;
-                }else if (i == 9 && j == 5) {
-                    orangePieces.add(pieceGrid[i][j]=new AlienHealer(i, j,false));
-                    gameGrid[i][j]=8;
-                }else if((i==9 &&j==9) || (i==9&&j==0)){
-                    orangePieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,false));
-                    gameGrid[i][j]=6;
-                }else if((i==9 &&j==3) || (i==9&&j==6)){
-                    orangePieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,false));
-                    gameGrid[i][j]=5;
-                }else if((i==9 &&j==2) || (i==9&&j==7)){
-                    orangePieces.add(pieceGrid[i][j]=new AlienScientist(i, j,false));
-                    gameGrid[i][j]=7;
-                }
+//                if(i==1){
+//                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,true));
+//                    gameGrid[i][j]=4;
+//                }else if (i == 0 && j == 4) {
+//                    yellowPieces.add(pieceGrid[i][j]=new AlienEgg(i, j,true));
+//                    gameGrid[i][j]=3;
+//                }else if (i == 0 && j == 5) {
+//                    yellowPieces.add(pieceGrid[i][j]=new AlienHealer(i, j,true));
+//                    gameGrid[i][j]=8;
+//                }else if((i==0 &&j==9) || (i==0&&j==0)){
+//                    yellowPieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,true));
+//                    gameGrid[i][j]=6;
+//                } else if((i==0 &&j==3) || (i==0&&j==6)){
+//                    yellowPieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,true));
+//                    gameGrid[i][j]=5;
+//                }else if((i==0 &&j==2) || (i==0&&j==7)){
+//                    yellowPieces.add(pieceGrid[i][j]=new AlienScientist(i, j,true));
+//                    gameGrid[i][j]=7;
+//                }else if(i==8){
+//                    orangePieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,false));
+//                    gameGrid[i][j]=4;
+//                 } else if (i == 9 && j == 4) {
+//                    orangePieces.add(pieceGrid[i][j]=new AlienEgg(i, j,false));
+//                    gameGrid[i][j]=3;
+//                }else if (i == 9 && j == 5) {
+//                    orangePieces.add(pieceGrid[i][j]=new AlienHealer(i, j,false));
+//                    gameGrid[i][j]=8;
+//                }else if((i==9 &&j==9) || (i==9&&j==0)){
+//                    orangePieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,false));
+//                    gameGrid[i][j]=6;
+//                }else if((i==9 &&j==3) || (i==9&&j==6)){
+//                    orangePieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,false));
+//                    gameGrid[i][j]=5;
+//                }else if((i==9 &&j==2) || (i==9&&j==7)){
+//                    orangePieces.add(pieceGrid[i][j]=new AlienScientist(i, j,false));
+//                    gameGrid[i][j]=7;
+//                }
                 updateScreen();
             }
         }
@@ -378,6 +378,7 @@ public class Play {
                                             if(!(pieceGrid[a][b]==null) &&pieceGrid[a][b].getType()==3 && !(pieceGrid[a][b].getSide())){
                                                 gameGrid[a][b]=9;
                                                 pieceGrid[a][b]=new AlienLeader(a, b,false);
+                                                currentPiece="Leader";
                                             }
                                         }
                                     }
@@ -394,6 +395,7 @@ public class Play {
                                             if(!(pieceGrid[a][b]==null) &&pieceGrid[a][b].getType()==3 && pieceGrid[a][b].getSide() ){
                                                 gameGrid[a][b]=9;
                                                 pieceGrid[a][b]=new AlienLeader(a, b,true);
+                                                currentPiece="Leader";
                                             }
                                         }
                                     }
@@ -1344,5 +1346,179 @@ public class Play {
         Main.setPane(0);
         endGame(0);
         initialize();
+    }
+
+
+    @FXML
+    private void example1(){//regular game
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,true));
+                    gameGrid[i][j]=4;
+                }else if (i == 0 && j == 4) {
+                    yellowPieces.add(pieceGrid[i][j]=new AlienEgg(i, j,true));
+                    gameGrid[i][j]=3;
+                }else if (i == 0 && j == 5) {
+                    yellowPieces.add(pieceGrid[i][j]=new AlienHealer(i, j,true));
+                    gameGrid[i][j]=8;
+                }else if((i==0 &&j==9) || (i==0&&j==0)){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,true));
+                    gameGrid[i][j]=6;
+                } else if((i==0 &&j==3) || (i==0&&j==6)){
+                    yellowPieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,true));
+                    gameGrid[i][j]=5;
+                }else if((i==0 &&j==2) || (i==0&&j==7)){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienScientist(i, j,true));
+                    gameGrid[i][j]=7;
+                }else if(i==8){
+                    orangePieces.add(pieceGrid[i][j]=new AlienTrooper(i,j,false));
+                    gameGrid[i][j]=4;
+                } else if (i == 9 && j == 4) {
+                    orangePieces.add(pieceGrid[i][j]=new AlienEgg(i, j,false));
+                    gameGrid[i][j]=3;
+                }else if (i == 9 && j == 5) {
+                    orangePieces.add(pieceGrid[i][j]=new AlienHealer(i, j,false));
+                    gameGrid[i][j]=8;
+                }else if((i==9 &&j==9) || (i==9&&j==0)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,false));
+                    gameGrid[i][j]=6;
+                }else if((i==9 &&j==3) || (i==9&&j==6)){
+                    orangePieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,false));
+                    gameGrid[i][j]=5;
+                }else if((i==9 &&j==2) || (i==9&&j==7)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienScientist(i, j,false));
+                    gameGrid[i][j]=7;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example2(){//Builder Super
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==3){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                 }else if((i==6 &&j==5)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,false));
+                    gameGrid[i][j]=6;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example3(){//Egg Super
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==6){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                }else if(i==5&&j==3){
+                    yellowPieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,true));
+                    gameGrid[i][j]=5;
+                }else if((i==5 &&j==4)){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienScientist(i, j,true));
+                    gameGrid[i][j]=7;
+                }else if((i==5 &&j==5)){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,true));
+                    gameGrid[i][j]=6;
+                }else if((i==5 &&j==6)){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienBuilder(i, j,true));
+                    gameGrid[i][j]=6;
+                }else if((i==6 &&j==4)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienEgg(i, j,false));
+                    gameGrid[i][j]=3;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example4(){//Scientist Super
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==6){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                }else if((i==6 &&j==4)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienScientist(i, j,false));
+                    gameGrid[i][j]=7;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example5(){//Healer Super
+        capturedOrangePieces.add(new AlienTrooper(5,5,false));
+        capturedOrangePieces.add(new AlienScientist(5,6,false));
+        capturedOrangePieces.add(new AlienBuilder(5,7,false));
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==6){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                }else if((i==6 &&j==4)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienHealer(i, j,false));
+                    gameGrid[i][j]=8;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example6(){//UNKNOWN SUPER
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==6){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                }else if((i==6 &&j==4)){
+                    orangePieces.add(pieceGrid[i][j]=new UNKNOWN(i, j,false));
+                    gameGrid[i][j]=5;
+                }
+                updateScreen();
+            }
+        }
+    }
+    @FXML
+    private void example7(){//Trooper Super
+        clearPieces();
+        for (int i = 0; i < pieceImg.length; i++) {
+            for (int j = 0; j < pieceImg[0].length; j++) {
+                if(i==1&&j==6){
+                    yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
+                    gameGrid[i][j]=4;
+                }else if((i==6 &&j==4)){
+                    orangePieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,false));
+                    gameGrid[i][j]=4;
+                }
+                updateScreen();
+            }
+        }
+    }
+    private void clearPieces(){
+        yellowPieces.clear();
+        orangePieces.clear();
+        for(int i=0;i<pieceGrid.length;i++){
+            for(int j=0;j<pieceGrid[0].length;j++){
+                pieceGrid[i][j]=null;
+            }
+        }
+        for(int i=0;i<gameGrid.length;i++){
+            for(int j=0;j<gameGrid[0].length;j++){
+                gameGrid[i][j]=2;
+            }
+        }
+        clearPossible();
     }
 }

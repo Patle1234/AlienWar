@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="719.0" prefWidth="952.0" style="-fx-background-color: #44C146;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <children>
+      <Label alignment="TOP_CENTER" layoutX="333.0" layoutY="77.0" prefHeight="36.0" prefWidth="286.0" text="How To: " textFill="#572f61" />
+      <Label alignment="TOP_CENTER" layoutX="171.0" layoutY="113.0" prefHeight="36.0" prefWidth="654.0" text="1. Pick the players. If single player, only select a name in the first choicebox. If multi-player, then select names for both" textFill="#572f61" />
+      <Label alignment="TOP_CENTER" layoutX="149.0" layoutY="149.0" prefHeight="36.0" prefWidth="654.0" text="2. The players will go back and forth, taking turns. Moving one piece equals one turn" textFill="#572f61" />
+      <Label alignment="TOP_CENTER" layoutX="159.0" layoutY="185.0" prefHeight="36.0" prefWidth="654.0" text="3. Players can either move a piece or use a super" textFill="#572f61" />
+      <Label alignment="TOP_CENTER" layoutX="149.0" layoutY="221.0" prefHeight="36.0" prefWidth="654.0" text="4. The game ends when all of the pieces for one player are caputrued" textFill="#572f61" />
+        <Button fx:id="returnButton" layoutX="882.0" layoutY="667.0" mnemonicParsing="false" onAction="#showMenu" prefHeight="32.0" prefWidth="52.0" style="-fx-background-color: #572f61;" text=" ⌫" textFill="#44c146">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+    </children>
+    <effect>
+        <Blend />
+    </effect>
+</AnchorPane>
