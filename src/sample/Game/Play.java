@@ -640,10 +640,10 @@ public class Play {
         //reset all containers/controls
         winnerLbl.setVisible(true);
         gPane.setVisible(false);
-        chooseP1.setVisible(false);
+        chooseP1.setVisible(true);
         p1Name.setVisible(false);
         p1Name.setText("");
-        p2Name.setVisible(false);
+        p2Name.setVisible(true);
         p1Name.setText("");
         chooseP1.getItems().clear();
         chooseP2.getItems().clear();
@@ -712,31 +712,24 @@ public class Play {
                 for (int j = 0; j < pKills.size(); j++) {
                     if (pKills.get(j).getX() == orangePieces.get(i).getX() && pKills.get(j).getY() == orangePieces.get(i).getY()) {
                         if (orangePieces.get(i).getType() == 9 && 7 > highestValueKill) {
-                            System.out.println("killing a leader");
                             spotToKill = pKills.get(j);
                             highestValueKill = 7;
                         } else if (orangePieces.get(i).getType() == 3 && 6 > highestValueKill) {
-                            System.out.println("killing a egg");
                             spotToKill = pKills.get(j);
                             highestValueKill = 6;
                         } else if (orangePieces.get(i).getType() == 8 && 5 > highestValueKill) {
-                            System.out.println("killing a healer");
                             spotToKill = pKills.get(j);
                             highestValueKill = 5;
                         } else if (orangePieces.get(i).getType() == 6 && 4 > highestValueKill) {
-                            System.out.println("killing a builder");
                             spotToKill = pKills.get(j);
                             highestValueKill = 4;
                         } else if (orangePieces.get(i).getType() == 7 && 3 > highestValueKill) {
-                            System.out.println("killing a scientist");
                             spotToKill = pKills.get(j);
                             highestValueKill = 3;
                         } else if (orangePieces.get(i).getType() == 5 && 2 > highestValueKill) {
-                            System.out.println("killing a UNKNOWN");
                             spotToKill = pKills.get(j);
                             highestValueKill = 2;
                         } else if (orangePieces.get(i).getType() == 4 && 1 > highestValueKill) {
-                            System.out.println("killing a trooper");
                             spotToKill = pKills.get(j);
                             highestValueKill = 1;
                         }
@@ -942,15 +935,12 @@ public class Play {
                 }
             }
             if (rand < .5 || !ifMoved) {//random movement
-                System.out.println("EVERY SINGLE A"+ pSpots.size());
-                System.out.println("random movement");
                 randSpots = myRand(0, pSpots.size() - 1);
                 for (int i = 0; i < yellowPieces.size(); i++) {
                     ArrayList<BoardSpot> tempMoves = yellowPieces.get(i).getPossibleMoves();
                     for (int j = 0; j < tempMoves.size(); j++) {
                         if (tempMoves.get(j).getX() == pSpots.get(randSpots).getX() && tempMoves.get(j).getY() == pSpots.get(randSpots).getY()) {
                             pToMove = yellowPieces.get(i);
-                            System.out.println("goes in here");
                             break;
                         }
                     }
@@ -1288,7 +1278,6 @@ public class Play {
         lbl2.setVisible(true);
         gPane.setDisable(false);
         startGameBtn.setVisible(false);
-        System.out.println("number players: "+numPlayers);
         if(turn &&numPlayers==1){
             computerPlayer();
         }
@@ -1416,7 +1405,7 @@ public class Play {
         clearPieces();
         for (int i = 0; i < pieceImg.length; i++) {
             for (int j = 0; j < pieceImg[0].length; j++) {
-                if(i==1&&j==6){
+                if(i==0&&j==9){
                     yellowPieces.add(pieceGrid[i][j]=new AlienTrooper(i, j,true));
                     gameGrid[i][j]=4;
                 }else if(i==5&&j==3){

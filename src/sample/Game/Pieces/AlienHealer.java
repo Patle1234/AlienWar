@@ -55,7 +55,7 @@ public class AlienHealer extends Piece{
         this.y=y;
     }
     public boolean ifCanHeal(){
-        System.out.println(ifCanHeal+"pppppppp");return ifCanHeal;
+        return ifCanHeal;
     }
     public void heal(){
         ifCanHeal=false;
